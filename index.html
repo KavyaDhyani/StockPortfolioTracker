@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Portfolio Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+
+    <div class = "container">
+
+        <div class = "heading">
+            <h1>Stock Portfolio Tracker</h1>
+        </div>
+
+        <!-- Portfolio Summary Cards-->
+
+        <div class = "summary">
+
+            <div class="summary-card">
+                <h3>Invested Value</h3>
+                <p id = "invested-value">$0.00</p>
+            </div>
+
+            <div class="summary-card">
+                <h3>Current Value</h3>
+                <p id = "current-value">$0.00</p>
+            </div>
+
+            <div class="summary-card">
+                <h3>24 hour change</h3>
+                <p id = "value-change">+$0.00</p>
+            </div>
+
+            <div class="summary-card">
+                <h3>Total Returns</h3>
+                <p id = "total-returns">$0.00</p>
+            </div>
+
+            <div class="summary-card">
+                <h3>Number of Stocks</h3>
+                <p id = "number-of-stocks">0</p>
+            </div>
+
+
+        </div>
+
+
+        <!-- Trend chart -->
+
+        <div class="chart-container">
+            <canvas id="portfolio-chart"></canvas>
+        </div>
+
+        <div class="add-stock-btn">
+            <button id = "add-stock-button"><i class="fa-solid fa-plus"></i></button>
+        </div>
+
+        <!-- Add-Stock-Menu -->
+        <div class="add-stock-cont hidden">
+            <h2>Enter Stock Details</h2>
+            <form id="add-stock-form">
+                <input type="text" id="stock-symbol" placeholder="Enter stock symbol (e.g., AAPL)" required>
+                <input type="date" id="stock-purchase-date" required>
+                <input type="number" id="stock-quantity" placeholder="Quantity" required min="1">
+                <button type="submit">Add Stock</button>
+            </form>
+        </div>
+
+       
+        <!-- Stock list -->
+        <div class="stock-list">
+            <div class="stock-item">
+                <div class="stock-details">
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src = "script.js"></script>
+</body>
+</html>

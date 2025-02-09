@@ -1,0 +1,293 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, sans-serif;
+    
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+body {
+    background: #111827;  
+    padding: 20px;
+    ::-webkit-scrollbar{
+        width:0%;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hidden{
+    display: none !important;
+}
+
+/* Heading and summary-cards */
+
+h1 {
+    color: #E5E7EB; 
+}
+
+.heading {
+    background: linear-gradient(145deg, #1A237E, #0F172A);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2),
+                0 2px 4px -1px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.summary-card {
+    background: linear-gradient(145deg, #1A237E, #1E293B);  
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3),
+                0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05); 
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.summary-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.4),
+                0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+.summary-card h3 {
+    color: #94A3B8;  
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.summary-card p {
+    color: #E5E7EB;  
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+
+
+/*trend chart*/
+
+.chart-container {
+    background: #1E293B;  
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3),
+                0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    height: 400px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+
+
+/* Add stock button and menu */
+
+
+#add-stock-button {
+    width: 55px;
+    height: 55px;
+    background: linear-gradient(145deg, #1A237E, #1E293B);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+#add-stock-button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(145deg, #2632a8, #2d3e5e); 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+}
+
+
+#add-stock-button:active {
+    transform: scale(0.9);
+    background: linear-gradient(145deg, #202c8b, #242f49); 
+}
+
+
+
+#add-stock-button:active {
+    transform: scale(0.9);
+}
+
+
+.add-stock-btn {
+    position: relative;
+    display: inline-block;
+}
+
+
+.add-stock-btn::after {
+    content: "Add Stock"; 
+    position: absolute;
+    bottom: 120%; 
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+
+.add-stock-btn:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.add-stock-cont {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    height: 50vh;
+    width: 40vh;
+    background: #1E293B;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center; 
+}
+
+.add-stock-cont h2{
+    color:#E5E7EB;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+
+
+input {
+    margin: 10px auto; 
+    height: 2.5rem;
+    display: block;
+    font-size: small;
+    background: #1E293B; 
+    color: #E5E7EB; 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    border-radius: 8px;
+    padding: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+
+#stock-purchase-date {
+    padding: 0.5rem;
+    border: 1px solid #374151;
+    border-radius: 0.375rem;
+    background-color: #1F2937;
+    color: #E5E7EB;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+
+input::placeholder {
+    color: #94A3B8; 
+}
+
+input:focus {
+    border-color: #4F46E5; 
+    box-shadow: 0 0 8px rgba(79, 70, 229, 0.5); 
+    outline: none;
+}
+
+
+.add-stock-cont button {
+    margin: 15px 0; 
+    width: 100%;
+    max-width: 90%;
+    height: 2.5rem;
+    background: linear-gradient(145deg, #1A237E, #374151); 
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.add-stock-cont button:hover {
+    background: #4F46E5; 
+    box-shadow: 0 4px 6px rgba(79, 70, 229, 0.5);
+}
+
+.add-stock-cont button:active {
+    transform: scale(0.95);
+}
+
+
+
+/* Stock list */
+
+.stock-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #E5E7EB;
+}
+
+.stock-details h3 {
+    color: #E5E7EB;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.stock-details p {
+    color: #94A3B8;
+    font-size: 0.9em;
+}
+
+.stock-current {
+    text-align: right;
+}
+
+.stock-return {
+    min-width: 120px;
+    text-align: right;
+}
+
+.stock-return.positive { color: #10B981; }
+.stock-return.negative { color: #EF4444; }
+
